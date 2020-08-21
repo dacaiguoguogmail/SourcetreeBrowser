@@ -63,11 +63,11 @@
 		9D23E62324EB819400562F48 /* SourcetreeBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				9D23E62424EB819400562F48 /* main.m */,
 				9D23E62F24EB81BA00562F48 /* STBrowserNode.h */,
 				9D23E62D24EB81BA00562F48 /* STBrowserNode.m */,
 				9D23E62E24EB81BA00562F48 /* STTreeNode.h */,
 				9D23E62C24EB81BA00562F48 /* STTreeNode.m */,
-				9D23E62424EB819400562F48 /* main.m */,
 			);
 			path = SourcetreeBrowser;
 			sourceTree = "<group>";
