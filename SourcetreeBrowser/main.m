@@ -18,6 +18,10 @@ int main(int argc, const char * argv[]) {
 
         NSString *stBrowserPath = @"~/Library/Application Support/SourceTree/browser.plist";
         NSString *configPath = stBrowserPath.stringByStandardizingPath;
+        _Pragma("clang diagnostic push")
+        _Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"")
+        _Pragma("clang diagnostic ignored \"-Wunused-parameter\"")
+
         NSArray *originBrowsers = [NSKeyedUnarchiver unarchiveObjectWithFile:configPath];
         
         NSMutableSet *groupNameSet = [NSMutableSet set];
@@ -69,6 +73,7 @@ int main(int argc, const char * argv[]) {
         // 7.归档
         NSMutableData *data = [NSMutableData data];
         NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+        _Pragma("clang diagnostic pop")
         archiver.outputFormat = NSPropertyListXMLFormat_v1_0; // 以二进制的形式，XML也行
         [archiver encodeObject:newBrowsersMut forKey:@"root"];
         [archiver finishEncoding];
